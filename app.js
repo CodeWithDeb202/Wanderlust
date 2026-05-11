@@ -182,6 +182,10 @@ app.all("*", (req, res, next) => {
 
 //Coustom error handler middleware
 app.use((err, req, res, next) => {
+    if (process.env.NODE_ENV !== "production") {
+        console.error(err);
+    }
+
     let {message="Something went wrong!", statusCode=500} = err;
     res.status(statusCode).render("./error.ejs" , {message});
 });

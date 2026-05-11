@@ -2,11 +2,12 @@
 const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
+const cloudApiKey = process.env.CLOUD_API_KEY || process.env.CLOUD_API_kEY;
 
 //Configure Cloudinary
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
-    api_key: process.env.CLOUD_API_KEY,
+    api_key: cloudApiKey,
     api_secret: process.env.CLOUD_API_SECRET,
 });
 

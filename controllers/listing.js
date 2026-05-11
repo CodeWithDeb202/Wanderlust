@@ -1,6 +1,9 @@
 //Require Listing Model
 const Listing = require("../models/listing.js");
 
+//Require ExpressError
+const ExpressError = require("../utils/ExpressError.js");
+
 
 
 //Exporting all the functions to be used in routes/listing.js
@@ -54,6 +57,10 @@ module.exports.showRoute = async (req, res) =>{
 
 //Create Route
 module.exports.createRoute = async (req, res, next) => {
+    if (!req.file) {
+        throw new ExpressError("Please upload a listing image.", 400);
+    }
+
     let url = req.file.path;
     let filename = req.file.filename;
     const newListing = new Listing(req.body.listing);
