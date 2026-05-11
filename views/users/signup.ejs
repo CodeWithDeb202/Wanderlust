@@ -1,7 +1,15 @@
 <% layout("/layouts/boilerplate.ejs") %>
 
+<style>
+    @media(max-width:431px){
+        .heading{
+            font-size: 1rem;
+        }
+    }
+</style>
+
     <div class="row">
-        <h1 class="col-6 offset-4 mb-5">Sign Up on Wanderlust</h1>
+        <h1 class="col-6 offset-4 mb-5 heading mt-3">Sign Up on Wanderlust</h1>
         <div class="col-6 offset-3">
             <form action="/signup" method="post" novalidate class="needs-validation">
                 <div class="mb-3">
