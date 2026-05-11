@@ -61,7 +61,7 @@
             <% } %>
 
 
-            <div class="col-8 offset-2 mb-3">
+            <div class="col-12 col-md-8 offset-md-2 mb-3">
                 <hr>
                 <% if(currentUser) { %>
                     <h4>Leave a Review</h4>
@@ -97,7 +97,7 @@
                 <p><b>All Reviews!!</b></p>
                 <div class="row">
                     <% for(let review of listing.review){ %>
-                        <div class="card mb-3 col-5 ms-3">
+                        <div class="card mb-3 col-12 col-md-5 ms-md-3">
                             <div class="card-body">
                                 <h5 class="card-title">@<%= review.author ? review.author.username : "deleted-user" %></h5>
                                 <p class="card-text">
