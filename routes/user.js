@@ -13,7 +13,7 @@ const passport = require("passport");
 const { saveRedirectUrl } = require('../middleware.js');
 
 //require User Controller
-const userControllers = require('../Controllers/user.js');
+const userControllers = require('../controllers/user.js');
 
 
 //Require all the functions from userControllers to be used in routes/user.js
