@@ -44,13 +44,30 @@
         z-index: 1031;
     }
 
-    .navbar-collapse form[role="search"] {
-        display: none !important;
-    }
-
     .navbar-collapse .navbar-nav {
         align-items: center;
         margin-left: 0 !important;
+        width: 100%;
+    }
+
+    .navbar-collapse form[role="search"] {
+        width: min(92%, 360px);
+        margin: 0.5rem auto;
+    }
+
+    .navbar-collapse .search_inp {
+        width: 100%;
+        min-width: 0;
+        height: 2.25rem;
+        padding: 0 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .navbar-collapse .search_btn {
+        width: 2.4rem;
+        height: 2.25rem;
+        padding: 0;
+        flex-shrink: 0;
     }
 
     .navbar-collapse .nav-link {
