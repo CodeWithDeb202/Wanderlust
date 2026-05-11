@@ -108,7 +108,7 @@
                                                 </p>
 
                                                 <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
-                                                <% if(currentUser === review.author) { %>
+                                                <% if(currentUser !== review.author) { %>
                                                     <form
                                                         action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
                                                         method="post" class="mb-3">
