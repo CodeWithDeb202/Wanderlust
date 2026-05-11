@@ -93,10 +93,10 @@
                                 <button class="btn btn-outline-dark">Submit</button>
                             </form>
                             <hr>
-                            <% } %>
+                        <% } %>
 
-                                <p><b>All Reviews!!</b></p>
-                                <div class="row">
+                            <p><b>All Reviews!!</b></p>
+                            <div class="row">
                                     <% for(let review of listing.review){ %>
                                         <div class="card mb-3 col-5 ms-3">
                                             <div class="card-body">
@@ -108,16 +108,17 @@
                                                 </p>
 
                                                 <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
-
-                                                <form
-                                                    action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
-                                                    method="post" class="mb-3">
-                                                    <button class="btn btn-sm btn-dark">Delete</button>
-                                                </form>
+                                                <% if(currentUser === review.author) { %>
+                                                    <form
+                                                        action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                                        method="post" class="mb-3">
+                                                        <button class="btn btn-sm btn-dark">Delete</button>
+                                                    </form>
+                                                <% } %>
                                             </div>
                                         </div>
-                                        <% } %>
-                                </div>
+                                    <% } %>
+                            </div>
 
                     </div>
         </div>
